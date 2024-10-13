@@ -1,6 +1,9 @@
-FROM node:16-alpine
+FROM ubuntu:latest
 
-RUN apk add --no-cache ffmpeg
+RUN apt install -y curl
+RUN apt install -y ffmpeg=7:4.4.2-0ubuntu0.22.04.1
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+RUN apt install -y nodejs
 
 COPY ./app .env package*.json *.js ./
 RUN npm ci
