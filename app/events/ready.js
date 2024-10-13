@@ -22,10 +22,10 @@ export default {
 	once: true,
 	async execute(client) {
 		const player = new Player(client);
-		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
-		await player.extractors.register(YoutubeiExtractor, {
-			authentication: parsedResponse?.youtubeToken
-		})
+		await player.extractors.loadDefault();
+		// await player.extractors.register(YoutubeiExtractor, {
+		// 	authentication: parsedResponse?.youtubeToken
+		// })
 
 		client.player = player;
 
