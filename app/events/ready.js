@@ -3,7 +3,6 @@ import path from 'node:path';
 import { Events } from 'discord.js';
 import { Player } from 'discord-player';
 import { fileURLToPath } from 'url';
-import { YoutubeiExtractor } from "discord-player-youtubei"
 import { GetSecretValueCommand, SecretsManagerClient } from "@aws-sdk/client-secrets-manager";
 
 const __filename = fileURLToPath(import.meta.url);
