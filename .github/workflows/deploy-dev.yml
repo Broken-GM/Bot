@@ -35,8 +35,8 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +'%Y-%m-%d-%H-%M')"
       - name: Build .ENV
         run: |
-          echo "DOMAIN=${{ secrets.AWS_REGION }}" > .env
-          echo "BOT_SECRET_ARN=${{ secrets.AWS_ACCESS_KEY_ID }}" >> .env
+          echo "DOMAIN=${{ secrets.DEV_DOMAIN }}" > .env
+          echo "BOT_SECRET_ARN=${{ secrets.BOT_SECRET_ARN }}" >> .env
       - name: Build, tag, and push the image to Amazon ECR
         id: build-image
         env:
