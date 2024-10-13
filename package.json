@@ -16,6 +16,8 @@
 		"dotenv": "^16.0.2",
 		"mediaplex": "^0.0.9",
 		"node-fetch": "^3.3.2",
+		"node-pre-gyp": "^0.17.0",
+		"rebuild": "^0.1.2",
 		"uuid": "^9.0.0",
 		"ytdl-core": "^4.11.5"
 	}
