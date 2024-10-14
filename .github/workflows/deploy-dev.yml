@@ -55,7 +55,7 @@ jobs:
       - name: Get task definition
         id: task-definition
         run: |
-          aws ecs describe-task-definition --task-definition ${{ secrets.TASK_DEFINITION }} --query taskDefinition > .aws/task-definition.json
+          aws ecs describe-task-definition --task-definition ${{ secrets.TASK_DEFINITION }} --query taskDefinition > ./task-definition.json
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
