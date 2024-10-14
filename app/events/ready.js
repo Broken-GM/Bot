@@ -37,6 +37,7 @@ export default {
 			client.player.events.on(event.name, (...args) => event.execute(...args));
 		}
 
+		console.log('Updated!')
 		console.log(`Ready! Logged in as ${client?.user?.tag}`);
 	},
 };
