@@ -9,4 +9,5 @@ RUN apt-get -y -qq install build-essential
 
 COPY ./app .env package*.json *.js ./
 RUN npm ci
+RUN npm list
 CMD ["node", "./bot.js"]
