@@ -4,6 +4,7 @@ import { Events } from 'discord.js';
 import { Player } from 'discord-player';
 import { fileURLToPath } from 'url';
 import { GetSecretValueCommand, SecretsManagerClient } from "@aws-sdk/client-secrets-manager";
+import { YoutubeiExtractor } from "discord-player-youtubei"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,9 +23,9 @@ export default {
 	async execute(client) {
 		const player = new Player(client);
 		await player.extractors.loadDefault();
-		// await player.extractors.register(YoutubeiExtractor, {
-		// 	authentication: parsedResponse?.youtubeToken
-		// })
+		player.extractors.register(YoutubeiExtractor, {
+			authentication: parsedResponse.youtubeToken
+		})
 
 		client.player = player;
 
